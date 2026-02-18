@@ -41,28 +41,7 @@ export const HeroSection = () => {
             che incidono significativamente sul costo finale dell'energia per gli operatori.
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="liquid-glass-card p-6 mb-8 max-w-xl"
-            style={{
-              background: 'linear-gradient(135deg, hsl(158 64% 42% / 0.1) 0%, hsl(0 0% 100% / 0.06) 100%)',
-              border: '1px solid hsl(158 64% 42% / 0.2)',
-            }}
-          >
-            <div className="flex items-start gap-3">
-              <Zap className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="text-foreground font-semibold mb-1">Integrato nativamente per i clienti Energizzo</p>
-                <p className="text-muted-foreground text-sm">
-                  I clienti Energizzo hanno la gestione del dispacciamento già integrata nel software. 
-                  Monitoraggio degli sbilanciamenti, analisi dei costi e ottimizzazione automatica — 
-                  senza configurazioni aggiuntive.
-                </p>
-              </div>
-            </div>
-          </motion.div>
+          
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
