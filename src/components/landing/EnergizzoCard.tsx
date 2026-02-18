@@ -38,22 +38,14 @@ export const EnergizzoCard = () => {
             </motion.div>
 
             <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-2"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
             >
-              Dispacciamento è un servizio offerto da
-            </motion.h2>
-            <motion.h2
-              className="text-2xl md:text-3xl lg:text-4xl font-bold gradient-text mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              Energizzo
+              Dispacciamento è un servizio offerto da{" "}
+              <span className="gradient-text">Energizzo</span>
             </motion.h2>
 
             <motion.p
