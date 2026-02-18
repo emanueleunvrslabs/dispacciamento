@@ -49,7 +49,7 @@ export const HeroSection = () => {
               className="flex flex-col sm:flex-row items-start gap-4 mb-8"
             >
               <motion.a
-                href="#dispacciamento"
+                href="/dispacciamento"
                 className="px-8 py-4 bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground font-semibold rounded-full transition-all duration-300 shadow-lg shadow-primary/30 flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
