@@ -1,10 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
-import { BandiMarquee } from "@/components/landing/BandiMarquee";
-import { ProblemSolutionSection } from "@/components/landing/ProblemSolutionSection";
-import { FeaturesSection } from "@/components/landing/FeaturesSection";
-import { HowItWorksSection } from "@/components/landing/HowItWorksSection";
-import { PricingSection } from "@/components/landing/PricingSection";
+import { EnergizzoCard } from "@/components/landing/EnergizzoCard";
 import { Footer } from "@/components/landing/Footer";
 
 const Index = () => {
@@ -24,6 +20,8 @@ const Index = () => {
         <Navbar />
         
         <main>
+          <HeroSection />
+          <EnergizzoCard />
         </main>
         
         <Footer />
