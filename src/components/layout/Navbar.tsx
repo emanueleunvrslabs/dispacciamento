@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Dispacciamento", href: "#dispacciamento" },
+  { label: "Home", to: "/" },
+  { label: "Dispacciamento", to: "/dispacciamento" },
 ];
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState("#");
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,41 +39,43 @@ export const Navbar = () => {
         }}
       >
         {/* Logo */}
-        <a href="#" className="pr-4 pl-2 flex items-center gap-2">
+        <Link to="/" className="pr-4 pl-2 flex items-center gap-2">
           <span className="text-lg font-bold text-primary">Dispacciamento</span>
           <span className="text-sm text-muted-foreground font-medium">by energizzo</span>
-        </a>
+        </Link>
 
         <div className="w-px h-5 bg-white/15 mx-1" />
 
-        {navLinks.map((link) => (
-          <motion.a
-            key={link.href}
-            href={link.href}
-            onClick={() => setActiveLink(link.href)}
-            className={cn(
-              "relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full",
-              activeLink === link.href
-                ? "text-primary"
-                : "text-foreground/70 hover:text-foreground"
-            )}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            {activeLink === link.href && (
-              <motion.div
-                layoutId="activeTab"
-                className="absolute inset-0 rounded-full liquid-glass"
-                style={{
-                  background: 'linear-gradient(135deg, hsl(158 64% 42% / 0.15) 0%, hsl(158 64% 42% / 0.05) 100%)',
-                  border: '1px solid hsl(158 64% 42% / 0.25)'
-                }}
-                transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-              />
-            )}
-            <span className="relative z-10">{link.label}</span>
-          </motion.a>
-        ))}
+        {navLinks.map((link) => {
+          const isActive = location.pathname === link.to;
+          return (
+            <Link key={link.to} to={link.to}>
+              <motion.span
+                className={cn(
+                  "relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full inline-flex",
+                  isActive
+                    ? "text-primary"
+                    : "text-foreground/70 hover:text-foreground"
+                )}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute inset-0 rounded-full liquid-glass"
+                    style={{
+                      background: 'linear-gradient(135deg, hsl(158 64% 42% / 0.15) 0%, hsl(158 64% 42% / 0.05) 100%)',
+                      border: '1px solid hsl(158 64% 42% / 0.25)'
+                    }}
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                <span className="relative z-10">{link.label}</span>
+              </motion.span>
+            </Link>
+          );
+        })}
       </motion.div>
     </motion.nav>
   );
