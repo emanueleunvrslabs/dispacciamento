@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowRight, Shield, BarChart3, Clock, TrendingDown, Zap, ChevronRight } from "lucide-react";
 
 export const HeroSection = () => {
@@ -48,15 +49,16 @@ export const HeroSection = () => {
               transition={{ duration: 0.7, delay: 0.35 }}
               className="flex flex-col sm:flex-row items-start gap-4 mb-8"
             >
-              <motion.a
-                href="/dispacciamento"
-                className="px-8 py-4 bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground font-semibold rounded-full transition-all duration-300 shadow-lg shadow-primary/30 flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Scopri di più
-                <ArrowRight className="w-5 h-5" />
-              </motion.a>
+              <Link to="/dispacciamento">
+                <motion.span
+                  className="px-8 py-4 bg-gradient-to-r from-primary to-emerald-500 text-primary-foreground font-semibold rounded-full transition-all duration-300 shadow-lg shadow-primary/30 flex items-center gap-2 inline-flex"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Scopri di più
+                  <ArrowRight className="w-5 h-5" />
+                </motion.span>
+              </Link>
             </motion.div>
 
             <motion.div
