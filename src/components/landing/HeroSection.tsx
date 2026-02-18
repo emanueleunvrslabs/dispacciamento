@@ -16,8 +16,7 @@ export const HeroSection = () => {
             >
               <span className="text-foreground">IL DISPACCIAMENTO</span>
               <br />
-              <span className="text-foreground">CHE </span>
-              <span className="gradient-text">TI SERVE</span>
+              <span className="gradient-text">INTELLIGENTE</span>
             </motion.h1>
 
             <motion.p
