@@ -24,12 +24,6 @@ const Index = () => {
         <Navbar />
         
         <main>
-          <HeroSection />
-          <BandiMarquee />
-          <ProblemSolutionSection />
-          <FeaturesSection />
-          <HowItWorksSection />
-          <PricingSection />
         </main>
         
         <Footer />
